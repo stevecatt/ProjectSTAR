@@ -21,11 +21,11 @@ Merge conflicts are extremely common and numerous when working in a team environ
 By keeping the master branch clean from merge conflicts, when someone starts a new task they can pull from the master branch into their new task branch. This way, they get the full working code from the master branch, but their changes will not affect the master branch or anyone else's coding. This is ideal in small teams, large teams, or even solo projects.
 ******************************************************************************************************************************
 # GitHub Terminal Commands
-Using your terminal, get into your work directory. Use <b>$ git init</b> to initialize the branch, and <b>$ git remote add origin url</b> to tell GitHub which repositiory your working directory will be associated with.
+Using your terminal, get into your work directory. Use <b>git init</b> to initialize the branch, and <b>git remote add origin url</b> to tell GitHub which repositiory your working directory will be associated with.
 
 <b>git status</b> checks which branch you are in, if there are files that have been modified, or if the parent branch has changes you have not accepted yet.
 
-<b>$git checkout -b childBranch parentBranch</b> is used to create a new branch (child branch) off of an existing branch (parent branch). <b>git checkout -b css-styling master</b> will create a branch called "css-styling" off of the master branch.
+<b>git checkout -b childBranch parentBranch</b> is used to create a new branch (child branch) off of an existing branch (parent branch). <b>git checkout -b css-styling master</b> will create a branch called "css-styling" off of the master branch.
 
 <b>get add .</b> adds files to be watched by your repository. <b>add .</b> is used to add all files, whereas <b>add fileName</b> can be used to only add a particular file or files.
 
