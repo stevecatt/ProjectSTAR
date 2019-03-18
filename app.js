@@ -1,17 +1,21 @@
 let news = document.getElementById("news")
 let submitBtn = document.getElementById("submitBtn")
 let zipInput = document.getElementById("zipInput")
+let zippers = 77002
+
+window.onload=loadData(zippers)
+
 
 submitBtn.addEventListener("click",function(){
-    let zippers= zipInput.value
-    console.log(zippers)
+    zippers= zipInput.value
+    loadData(zippers)
+})
+    function loadData(zippers){
     let localWeather= `https://api.openweathermap.org/data/2.5/weather?zip=${zippers}&units=imperial&apiKey=5c532f33d76a318783dd01c47721de8e`
     fetch(localWeather)
     .then(response=>response.json())
         .then(json=>{console.log(json.main)
-        console.log(json)
-        //console.log(json.wind)
-        //console.log(json.sys.sunset*1000)
+        
         let sunset = new Date(json.sys.sunset*1000)
         let sunrise = new Date(json.sys.sunrise*1000)
         let windDirection = getDirection(json.wind.deg)
@@ -19,8 +23,7 @@ submitBtn.addEventListener("click",function(){
         console.log(json.weather[0].main)
 
 
-    //console.log(sunset)
-    //console.log(sunrise)
+    
     let weatherBug = `
     <h3> Weather from ${json.name}</h3>
     <h4> Current Temperature: ${json.main.temp} Deg</h4>
@@ -29,15 +32,15 @@ submitBtn.addEventListener("click",function(){
     <h4> Current Conditions: ${json.weather[0].description}</h4>
     `
     weather.innerHTML=weatherBug
-     let localNews= `https://gnews.io/api/v2/?q=${json.name}&token=114071df888d1c4880c2bff07c8ffc33`     
+        let localNews= `https://gnews.io/api/v2/?q=${json.name}&token=114071df888d1c4880c2bff07c8ffc33`     
     //let Houston = `https://newsapi.org/v2/everything?sources=nbc-news&q=${json.name}+country=US&sortBy=popularity&apiKey=1a6cdc031db640ff9e62b8e0e7716746`
-    fetch(localNews)
-    .then(response=>response.json())
+        fetch(localNews)
+        .then(response=>response.json())
     
         .then(function(json){ return json
             
         })
-        .then (function(json){
+            .then (function(json){
             console.log(json)
             let newsID = json.articles.map(function(news){
                // console.log(news)
@@ -67,8 +70,7 @@ submitBtn.addEventListener("click",function(){
 
 
 
-})
-
+}
 
 
 
