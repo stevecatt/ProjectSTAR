@@ -1,40 +1,35 @@
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--ProjectSTAR CSS files START-->
-<link rel="stylesheet" href="/css/master.css">
-<!--ProjectSTAR CSS files END-->
-<title>ProjectSTAR homepage</title> <!--change title as needed-->
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="main.css"></link>
 </head>
-
- 
 
 <body>
 <div id="container">
+  <input id="emailAddress" placeholder="Email address"></input>
+  <input id="password" type="password" placeholder="Password"></input>
+  <button id="signInUser">Sign In</button>
+  <button id="signOut">Sign Out</button>
+  <button id="signUpUser">Join</button>
 
 </div>
-<!--ProjectSTAR START-->
-<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyA9lZ_9Iq0kVFUjRvC8gKpjvR0C990mJWY",
-    authDomain: "projectstar-4530d.firebaseapp.com",
-    databaseURL: "https://projectstar-4530d.firebaseio.com",
-    projectId: "projectstar-4530d",
-    storageBucket: "projectstar-4530d.appspot.com",
-    messagingSenderId: "394283151570"
+    apiKey: "AIzaSyAKoESWbLwStYP27votqibe8szVSaM3w_0",
+    authDomain: "houstonnewsweather.firebaseapp.com",
+    databaseURL: "https://houstonnewsweather.firebaseio.com",
+    projectId: "houstonnewsweather",
+    storageBucket: "",
+    messagingSenderId: "851812061365"
   };
   firebase.initializeApp(config);
 </script>
-<!--ProjectSTAR END-->
 
-
-<!--ProjectSTAR javascript files START-->
-<script src=""></script>
-<!--ProjectSTAR javascript files END-->
-</body>
-</html>
+  <script src="main.js"></script>
+  <script src="classes.js"></script>
+  </body>
+  </html>
