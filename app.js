@@ -15,7 +15,8 @@ submitBtn.addEventListener("click",function(){
         let sunset = new Date(json.sys.sunset*1000)
         let sunrise = new Date(json.sys.sunrise*1000)
         let windDirection = getDirection(json.wind.deg)
-        
+       //search inside the object in the array
+        console.log(json.weather[0].main)
 
 
     //console.log(sunset)
@@ -25,8 +26,42 @@ submitBtn.addEventListener("click",function(){
     <h4> Current Temperature: ${json.main.temp} Deg</h4>
     <h4> Wind Speed : ${json.wind.speed} Mph;    Direction: ${windDirection}</h4>
     <h4> Sunrise: ${sunrise.toLocaleTimeString()} Sunset: ${sunset.toLocaleTimeString()}</h4>
+    <h4> Current Conditions: ${json.weather[0].description}</h4>
     `
     weather.innerHTML=weatherBug
+     let localNews= `https://gnews.io/api/v2/?q=${json.name}&token=114071df888d1c4880c2bff07c8ffc33`     
+    //let Houston = `https://newsapi.org/v2/everything?sources=nbc-news&q=${json.name}+country=US&sortBy=popularity&apiKey=1a6cdc031db640ff9e62b8e0e7716746`
+    fetch(localNews)
+    .then(response=>response.json())
+    
+        .then(function(json){ return json
+            
+        })
+        .then (function(json){
+            console.log(json)
+            let newsID = json.articles.map(function(news){
+               // console.log(news)
+                return `
+                <li> ${news.title}</li>
+                <a href = ${news.link}>Click to get story</a>
+                <img src = ${news.image}>
+        
+            
+                `
+            }) 
+    
+            news.innerHTML=newsID.join("")
+    
+           
+        })
+
+
+
+
+
+
+
+
 
 })
 
@@ -46,18 +81,18 @@ submitBtn.addEventListener("click",function(){
             //'apiKey=1a6cdc031db640ff9e62b8e0e7716746';
 
 //var req = new Request(url);    
-//let texas = "https://newsapi.org/v2/everything?q=Houston+Texas=us&apiKey=1a6cdc031db640ff9e62b8e0e7716746" 
-let Houston = "https://newsapi.org/v2/everything?q=Houston+Texas=US&sortBy=popularity&apiKey=1a6cdc031db640ff9e62b8e0e7716746"
-fetch(Houston)
+/*let texas = "https://gnews.io/api/v2/?q=houston&token=114071df888d1c4880c2bff07c8ffc33"
+let Houston = `https://newsapi.org/v2/everything?q=Houston+US=US&sortBy=popularity&apiKey=9b1543ab0ee24e0a82cab9621ca9aa7b`
+fetch(texas)
 .then(response=>response.json())
 
     .then(function(json){ return json
         
     })
     .then (function(json){
-       // console.log(json)
+        console.log(json)
         let newsID = json.articles.map(function(news){
-           // console.log(news)
+            console.log(news)
             return `
             <li> ${news.title}</li>
             <a href = '${news.url}'>${news.url}</a>
@@ -70,6 +105,8 @@ fetch(Houston)
 
        
     })
+
+    */
     
 
 
