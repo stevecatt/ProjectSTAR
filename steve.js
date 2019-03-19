@@ -85,9 +85,9 @@ submitBtn.addEventListener("click",function(){
 
 
 }
-let weathermap ="https://openweathermap.org/weathermap?basemap=map&cities=false&layer=precipitation&lat=29.7528&lon=-95.3391&zoom=10"
+//let weathermap ="https://openweathermap.org/weathermap?basemap=map&cities=false&layer=precipitation&lat=29.7528&lon=-95.3391&zoom=10"
 
-let otherWeatherMap = "https://tile.openweathermap.org/map/precipitation_new/zoom=10/256/256.png?appid=5c532f33d76a318783dd01c47721de8e"
+//let otherWeatherMap = "https://tile.openweathermap.org/map/precipitation_new/zoom=10/256/256.png?appid=5c532f33d76a318783dd01c47721de8e"
 //let HoustonWeather= "https://api.openweathermap.org/data/2.5/weather?zip=77445&units=imperial&apiKey=5c532f33d76a318783dd01c47721de8e"
 
 
